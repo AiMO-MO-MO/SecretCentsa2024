@@ -1,0 +1,75 @@
+body {
+    background: url('Images/Bkgrnd.jpg') no-repeat center center fixed;
+    background-size: contain;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    position: relative;
+    margin-top: 50px;
+}
+
+.tree {
+    width: 200px;
+    height: 300px;
+    background-size: cover;
+    position: relative;
+    margin: 0 auto;
+}
+
+.present {
+    width: 100px;
+    height: 100px;
+    background: url('Images/Present.webp') no-repeat center;
+    background-size: cover;
+    position: absolute;
+    bottom: -25000px;
+    left: 120%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.present.opened {
+    background: url('Images/PM.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.hidden {
+    display: none;
+}
+
+h1 {
+    position: relative;
+    font-size: 3em;
+    font-weight: bold;
+    color: #ff0000;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9),
+                 0px 0px 10px rgba(0, 255, 0, 0.7);
+    background: linear-gradient(90deg, #ff0000, #ffffff, #008000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    padding: 10px 20px;
+    display: inline-block;
+    font-family: 'Pacifico', cursive;
+}
+
+#giftMessage {
+    width: 200%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+}
+
+#giftMessage p {
+    font-family: 'Pacifico', cursive;
+    font-size: 2em;
+    color: #004d00;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8),
+                 0px 0px 10px rgba(0, 0, 0, 0.5);
+}

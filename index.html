@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Santa</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        /* Add styles for the particles container */
+        #particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1; /* Ensure it appears above other content */
+            pointer-events: none; /* Allow clicks to pass through */
+        }
+    </style>
+</head>
+<body>
+    <audio id="backgroundMusic" src="Opening Sound.mp3" preload="auto" loop></audio>
+    <audio id="openGiftAudio" src="Christmas Sound.mp3" preload="auto" loop></audio>
+    <div id="particles-js"></div>
+    <div class="container">
+        <h1>Secret Centsa Surprise!</h1>
+        <div class="tree">
+            <div id="giftMessage" class="hidden">
+                <img src="Images/PM.jpg" alt="Gift Image" id="giftImage" />
+                <p>If Cents Assist is going to always on the mind, it should keep you warm as well. Merry Christmas!</p>
+            </div>
+            <div class="present" onclick="openGift()"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        window.addEventListener('load', function() {
+            const backgroundMusic = document.getElementById('backgroundMusic');
+            backgroundMusic.play().catch(error => {
+                console.log('Background music playback failed:', error);
+            });
+        });
+
+        function openGift() {
+            const giftMessage = document.getElementById('giftMessage');
+            giftMessage.classList.remove('hidden');
+
+            // Play the audio when the present is opened
+            const audio = document.getElementById('openGiftAudio');
+            audio.play().catch(error => {
+                console.log('Audio playback failed:', error);
+            });
+
+            // Initialize particles
+            particlesJS("particles-js", {
+                particles: {
+                    number: { value: 100, density: { enable: true, value_area: 800 } },
+                    color: { value: "#ffcc00" },
+                    shape: {
+                        type: "circle",
+                        stroke: { width: 0, color: "#000000" },
+                        polygon: { nb_sides: 5 },
+                    },
+                    opacity: { value: 0.5, random: false, anim: { enable: false } },
+                    size: { value: 5, random: true, anim: { enable: false } },
+                    line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
+                    move: { enable: true, speed: 6, direction: "none", random: false, straight: false, out_mode: "out", bounce: false, attract: { enable: false } }
+                },
+                interactivity: {
+                    detect_on: "canvas",
+                    events: {
+                        onhover: { enable: true, mode: "repulse" },
+                        onclick: { enable: true, mode: "push" },
+                        resize: true
+                    },
+                    modes: {
+                        grab: { distance: 400, line_linked: { opacity: 1 } },
+                        bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 },
+                        repulse: { distance: 200, duration: 0.4 },
+                        push: { particles_nb: 4 },
+                        remove: { particles_nb: 2 }
+                    }
+                },
+                retina_detect: true
+            });
+        }
+    </script>
+</body>
+</html>
