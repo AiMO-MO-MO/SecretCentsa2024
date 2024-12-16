@@ -24,7 +24,7 @@ body {
     background: url('Images/Present.webp') no-repeat center;
     background-size: cover;
     position: absolute;
-    bottom: -300px;
+    bottom: -325px;
     left: 120%;
     transform: translateX(-50%);
     cursor: pointer;
