@@ -29,6 +29,7 @@ body {
     transform: translateX(-50%);
     cursor: pointer;
     transition: background 0.3s;
+    z-index: 10; /* Lower priority */
 }
 
 .present.opened {
@@ -57,13 +58,12 @@ h1 {
     font-family: 'Pacifico', cursive;
 }
 
-#giftMessage {
-    width: 200%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 10px;
+#giftMessage p {
+    font-family: 'Pacifico', cursive;
+    font-size: 2em;
+    color: #004d00;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8),
+                 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 #giftMessage p {
